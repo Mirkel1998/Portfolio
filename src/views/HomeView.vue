@@ -1,3 +1,8 @@
+<script setup>
+import FooterView from '../components/FooterView.vue';
+</script>
+
+
 <template>
   <section>
     <div class="hero-section">
@@ -54,7 +59,7 @@
         interpret the world around me.</p>
     </div>
   </section>
-  <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna se my projects?</h4>
+  <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna see my projects?</h4>
   <div class="flex items-center justify-center">
     <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded">
       Projects
@@ -64,10 +69,9 @@
   <section>
 
   </section>
-</template>
 
-<script setup>
-</script>
+  <FooterView />
+</template>
 
 <style>
 .hero-section {

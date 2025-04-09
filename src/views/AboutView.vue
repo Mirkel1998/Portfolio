@@ -1,7 +1,22 @@
+<script setup>
+import FooterView from '../components/FooterView.vue';
+</script>
+
 <template>
-  <div class="about">
-    <h1 class="!text-pink-700">This is an about page</h1>
+<div class="cvBigPicture"></div>
+
+<section>
+  <div class="idCard1">
+
   </div>
+
+  <div class="1dCard2">
+
+  </div>
+
+</section>
+
+<FooterView />
 </template>
 
 <style>
@@ -11,5 +26,13 @@
     display: flex;
     align-items: center;
   }
+}
+
+.cvBigPicture {
+  width: 100%;
+  height: 3508px;
+  background-image: url("../components/images/cv take 3.png");
+  background-size:contain;
+  background-repeat: no-repeat;
 }
 </style>
