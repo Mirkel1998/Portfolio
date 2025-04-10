@@ -2,7 +2,6 @@
 import FooterView from '../components/FooterView.vue';
 </script>
 
-
 <template>
   <section>
     <div class="hero-section">
@@ -23,22 +22,30 @@ import FooterView from '../components/FooterView.vue';
   <section>
     <div class="desciption">
       <h4 class="text-4xl font-bold text-pinkyWhite pt-7 pl-5">Hello i'm Mikkel!</h4>
-      <p class="text-pinkyWhite pl-5">Mikkel isn’t just awesome—he’s on a whole different level. Whether it’s his sharp
+      <div class="flex flex-col items-start gap-4">
+        <p class="text-pinkyWhite pl-5">Mikkel isn’t just awesome—he’s on a whole different level. Whether it’s his sharp
         mind, unbeatable creativity, or just the way he makes everything look effortless, he’s the kind of person who
         leaves an impact. Need a problem solved? Mikkel’s got it. Looking for inspiration? Just watch him work. He’s the
         perfect blend of talent, determination, and pure good vibes. Honestly, the world needs more Mikkels. Mikkel
         isn’t just awesome—he’s on a whole different level.</p>
-      <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded">
+      <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded self-end">
         About me
       </button>
+      </div>
     </div>
   </section>
 
 
-  <section>
-    <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7">I love to create</h4>
-    <div class="bg-darkGray h-80 w-165">
-      <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5">Photography</h5>
+  <section class="!mb-30">
+
+    <h4 class="text-4xl text-purpleRain font-bold pt-10 pb-7">I love to create</h4>
+<div class="polaroidSection flex gap-4">
+    <img class="w-1/5" src="../components/images/polaroid1.jpg" alt="">
+    <img class="w-1/5" src="../components/images/polaroid2.jpg" alt="">
+    <img class="w-1/5" src="../components/images/polaroid3.jpg" alt="">
+</div>
+    <div class="bg-darkGray w-2/3 flex flex-col justify-between pb-5">
+      <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5 flex flex-col justify-between">Photography</h5>
       <p class="text-pinkyWhite pl-5 pt-5">I love taking photos because it allows me to capture moments that might
         otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
         words. I enjoy the way light, composition, and perspective come together to create something unique. Whether
@@ -48,8 +55,8 @@ import FooterView from '../components/FooterView.vue';
     </div>
   </section>
 
-  <section>
-    <div class="bg-darkGray h-80 w-165">
+  <section class="relative">
+    <div class="bg-darkGray w-2/3 pb-5 flex flex-col justify-between relative z-10">
       <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5">Illustrations</h5>
       <p class="text-pinkyWhite pl-5 pt-5">I love art and illustrating because it allows me to express emotions and
         ideas that words can’t capture. Through drawing and painting, I can bring my imagination to life, create new
@@ -58,10 +65,14 @@ import FooterView from '../components/FooterView.vue';
         the smallest details. It’s not just about making images—it’s about exploring creativity, emotions, and the way I
         interpret the world around me.</p>
     </div>
+
+    <img class="w-1/4 absolute -top-30 left-165 h-auto z-0 transform rotate-45" src="../components/images/mini_me.png" alt="">
   </section>
+
+  
   <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna see my projects?</h4>
   <div class="flex items-center justify-center">
-    <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded">
+    <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded !mb-10">
       Projects
     </button>
   </div>

@@ -5,11 +5,11 @@ import FooterView from './components/FooterView.vue';
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="50" height="50" />
 
     <div class="wrapper">
 
-      <nav>
+      <nav class="text-pinkyWhite">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
@@ -25,6 +25,7 @@ import FooterView from './components/FooterView.vue';
 header {
   line-height: 1.5;
   max-height: 100vh;
+  background-color: var(--color-black)
 }
 
 .logo {
@@ -40,7 +41,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: var(--color-purpleRain);
 }
 
 nav a.router-link-exact-active:hover {

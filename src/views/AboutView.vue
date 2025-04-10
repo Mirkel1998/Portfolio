@@ -3,12 +3,16 @@ import FooterView from '../components/FooterView.vue';
 </script>
 
 <template>
+
 <div class="cvBigPicture"></div>
 
-<section>
-  <div class="idCard1">
-
+<section class="idCardSection flex items-center justify-center h-screen">
+<div class="flex items-center justify-center">
+  <div class="idCard1 bg-darkGray h-100 w-350">
   </div>
+
+</div>
+ 
 
   <div class="1dCard2">
 
@@ -29,10 +33,14 @@ import FooterView from '../components/FooterView.vue';
 }
 
 .cvBigPicture {
-  width: 100%;
-  height: 3508px;
+  width: auto;
+  height: 100vh;
   background-image: url("../components/images/cv take 3.png");
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
