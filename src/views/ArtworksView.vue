@@ -1,41 +1,50 @@
 <script setup>
-const images = [
-  'image1.jpg',
-  'image2.jpg',
-  'image3.jpg',
-  'image4.jpg',
-  'image5.jpg',
-  'image6.jpg',
-  'image7.jpg',
-  'image8.jpg',
-  'image9.jpg',
-  'image10.jpg',
-  'image11.jpg',
-  'image12.jpg',
-];
+
 </script>
 
 <template>
-  <main>
-    <div class="gallery">
-      <div v-for="(image, index) in images" :key="index" class="gallery-item">
-        <img :src="image" alt="Artwork" />
-      </div>
+  <section><h1 class="text-purpleRain text-5xl font-bold pt-10 pb-10">Artworks</h1></section>
+  
+ <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/polaroid1.jpg" alt="">
     </div>
-  </main>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/polaroid2.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/polaroid3.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/forrestPolaroid1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/forrestPolaroid3.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/forrestPolaroid2.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/berryPolaroid1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/kittyPolaroid1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/berryPolaroid2.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/darkPolaroid1.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/darkPolaroid2.jpg" alt="">
+    </div>
+    <div>
+        <img class="h-auto max-w-full rounded-lg" src="../components/images/darkPolaroid3.jpg" alt="">
+    </div>
+</div>
 </template>
 
-<style scoped>
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
+<style>
 
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-}
 </style>

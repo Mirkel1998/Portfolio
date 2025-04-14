@@ -34,15 +34,14 @@ import FooterView from '../components/FooterView.vue';
       </div>
     </div>
   </section>
-
-
-  <section class="!mb-30">
+  
+<section class="!mb-30">
 
     <h4 class="text-4xl text-purpleRain font-bold pt-10 pb-7">I love to create</h4>
 <div class="polaroidSection flex gap-4">
-    <img class="w-1/5" src="../components/images/polaroid1.jpg" alt="">
-    <img class="w-1/5" src="../components/images/polaroid2.jpg" alt="">
-    <img class="w-1/5" src="../components/images/polaroid3.jpg" alt="">
+    <img class="size-40" src="../components/images/polaroid1.jpg" alt="">
+    <img class="size-40" src="../components/images/polaroid2.jpg" alt="">
+    <img class="size-40" src="../components/images/polaroid3.jpg" alt="">
 </div>
     <div class="bg-darkGray w-2/3 flex flex-col justify-between pb-5">
       <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5 flex flex-col justify-between">Photography</h5>
@@ -55,8 +54,9 @@ import FooterView from '../components/FooterView.vue';
     </div>
   </section>
 
-  <section class="relative">
-    <div class="bg-darkGray w-2/3 pb-5 flex flex-col justify-between relative z-10">
+
+  <section class="relative flex">
+    <div class="bg-darkGray w-2/3 pb-5 flex flex-col justify-between relative">
       <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5">Illustrations</h5>
       <p class="text-pinkyWhite pl-5 pt-5">I love art and illustrating because it allows me to express emotions and
         ideas that words can’t capture. Through drawing and painting, I can bring my imagination to life, create new
@@ -64,12 +64,12 @@ import FooterView from '../components/FooterView.vue';
         feelings and tell visual stories. Whether it’s a quick sketch or a detailed piece, art helps me see beauty in
         the smallest details. It’s not just about making images—it’s about exploring creativity, emotions, and the way I
         interpret the world around me.</p>
+        <div class="miniMeSection absolute  w-1/4">
+          <img class="size-75 -z-1 transform rotate-45" src="../components/images/mini_me.png" alt="">
+        </div>
     </div>
-
-    <img class="w-1/4 absolute -top-30 left-165 h-auto z-0 transform rotate-45" src="../components/images/mini_me.png" alt="">
   </section>
 
-  
   <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna see my projects?</h4>
   <div class="flex items-center justify-center">
     <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded !mb-10">
@@ -95,5 +95,19 @@ import FooterView from '../components/FooterView.vue';
 
 .fade-effect {
   translate: all 0.5s;
+}
+
+.miniMeSection {
+  position: absolute;
+  top: -20%;
+  right:-10%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.miniMeSection img {
+  
+
 }
 </style>

@@ -10,3 +10,7 @@
   --color-darkGray: #514F4F;
   --color-pinkyWhite: #FEF8FB;
 }
+
+#app {
+  max-width: 1280px;
+}
