@@ -3,21 +3,21 @@ import FooterView from '../components/FooterView.vue';
 </script>
 
 <template>
-<div class="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white font-sans py-20 px-6">
+<div class=" min-h-screen text-white font-sans py-20 px-6">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 bg-black rounded-3xl shadow-2xl overflow-hidden relative">
     
     <!-- Left Section -->
     <div class="bg-purple-800 p-16 space-y-20">
       <div>
-        <h1 class="text-5xl font-bold text-pink-300 mb-6">Mikkel Bech</h1>
-        <p class="italic text-white text-lg leading-loose">
+        <h1 class="text-5xl font-bold text-pink-500 mb-6 pb-10">Mikkel Bech</h1>
+        <p class="italic text-white text-lg leading-loose pb-10">
           "Design is where creativity meets function, and development brings ideas to life - I strive to master both."
         </p>
       </div>
 
       <div class="space-y-6">
         <h2 class="text-3xl font-semibold mb-4">Personal summary</h2>
-        <p class="text-base leading-loose">
+        <p class="text-base leading-loose pb-10">
           My name is Mikkel Bech, and I am currently studying Multimedia Design at EASV. I have a passion for both
           design and development, aiming to bridge creativity with functionality. With a strong interest in user
           experience, web development, and visual storytelling, I aspire to craft engaging digital experiences that
@@ -27,7 +27,7 @@ import FooterView from '../components/FooterView.vue';
       </div>
 
       <div class="space-y-4">
-        <h2 class="text-3xl font-semibold mb-4">Education</h2>
+        <h2 class="text-3xl font-semibold mb-4 pb-5">Education</h2>
         <ul class="text-base space-y-4 leading-relaxed">
           <li>Blåbjerggårdskolen, 9 klasse</li>
           <li>HF, Varde gymnasium</li>
@@ -35,7 +35,7 @@ import FooterView from '../components/FooterView.vue';
       </div>
 
       <div class="space-y-4">
-        <h2 class="text-3xl font-semibold mb-4">Work experience</h2>
+        <h2 class="text-3xl font-semibold mb-4 pb-5 pt-5">Work experience</h2>
         <ul class="list-disc ml-6 text-base space-y-4 leading-relaxed">
           <li>Baker apprenticeship, Brødboxen, Esbjerg</li>
           <li>Customerservice, Bilka, Esbjerg</li>
@@ -44,7 +44,7 @@ import FooterView from '../components/FooterView.vue';
       </div>
 
       <div class="space-y-4">
-        <h2 class="text-3xl font-semibold mb-4">Contact info</h2>
+        <h2 class="text-3xl font-semibold mb-4 pb-5 pt-5">Contact info</h2>
         <ul class="text-base space-y-4 leading-relaxed">
           <li>📞 93800239</li>
           <li>📧 Mikped01@easv365.dk</li>
@@ -80,7 +80,7 @@ import FooterView from '../components/FooterView.vue';
           </div>
 
           <div>
-            <h2 class="text-3xl font-bold text-pink-400 mb-6">Soft skills</h2>
+            <h2 class="text-3xl font-bold text-pink-400 mb-6 pt-50">Soft skills</h2>
             <ul class="list-disc ml-6 text-base space-y-4 leading-loose">
               <li>Communication</li>
               <li>Creativity</li>
