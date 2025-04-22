@@ -34,41 +34,38 @@ import FooterView from '../components/FooterView.vue';
       </div>
     </div>
   </section>
+
   
-<section class="!mb-30">
-
-    <h4 class="text-4xl text-purpleRain font-bold pt-10 pb-7">I love to create</h4>
-<div class="polaroidSection flex gap-4">
-    <img class="size-40" src="../components/images/polaroid1.jpg" alt="">
-    <img class="size-40" src="../components/images/polaroid2.jpg" alt="">
-    <img class="size-40" src="../components/images/polaroid3.jpg" alt="">
-</div>
-    <div class="bg-darkGray w-2/3 flex flex-col justify-between pb-5">
-      <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5 flex flex-col justify-between">Photography</h5>
-      <p class="text-pinkyWhite pl-5 pt-5">I love taking photos because it allows me to capture moments that might
-        otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
-        words. I enjoy the way light, composition, and perspective come together to create something unique. Whether
-        it’s a breathtaking landscape, a fleeting expression, or the beauty in everyday life, photography helps me see
-        the world differently. It’s not just about taking pictures—it’s about preserving feelings, memories, and the way
-        I experience the world around me.</p>
+  <section>
+<a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg" src="../components/images/polaroid1.jpg" alt="">
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Photography</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">I love taking photos because it allows me to capture moments that might
+    otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
+    words. I enjoy the way light, composition, and perspective come together to create something unique.</p>
     </div>
-  </section>
+</a>
 
-
-  <section class="relative flex">
-    <div class="bg-darkGray w-2/3 pb-5 flex flex-col justify-between relative">
-      <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5">Illustrations</h5>
-      <p class="text-pinkyWhite pl-5 pt-5">I love art and illustrating because it allows me to express emotions and
-        ideas that words can’t capture. Through drawing and painting, I can bring my imagination to life, create new
-        worlds, and share my perspective with others. I enjoy experimenting with colors, shapes, and textures to evoke
-        feelings and tell visual stories. Whether it’s a quick sketch or a detailed piece, art helps me see beauty in
-        the smallest details. It’s not just about making images—it’s about exploring creativity, emotions, and the way I
-        interpret the world around me.</p>
-        <div class="miniMeSection absolute  w-1/4">
-          <img class="size-75 -z-1 transform rotate-45" src="../components/images/mini_me.png" alt="">
-        </div>
+  <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
+    <div class="flex flex-col justify-between p-4 leading-normal order-2 md:order-1">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Photography</h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        I love taking photos because it allows me to capture moments that might otherwise be forgotten. Through
+        photography, I can freeze time, document emotions, and tell stories without words. I enjoy the way light,
+        composition, and perspective come together to create something unique.
+      </p>
     </div>
-  </section>
+    <img
+      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg order-1 md:order-2"
+      src="../components/images/polaroid1.jpg"
+      alt=""
+    >
+  </a>
+</section>
+
+
+  
 
   <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna see my projects?</h4>
   <div class="flex items-center justify-center">
@@ -78,6 +75,39 @@ import FooterView from '../components/FooterView.vue';
   </div>
 
   <section>
+    <!-- <section class="!mb-30">
+<h4 class="text-4xl text-purpleRain font-bold pt-10 pb-7">I love to create</h4>
+<div class="polaroidSection flex gap-4">
+<img class="size-40" src="../components/images/polaroid1.jpg" alt="">
+<img class="size-40" src="../components/images/polaroid2.jpg" alt="">
+<img class="size-40" src="../components/images/polaroid3.jpg" alt="">
+</div>
+<div class="bg-darkGray w-2/3 flex flex-col justify-between pb-5">
+  <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5 flex flex-col justify-between">Photography</h5>
+  <p class="text-pinkyWhite pl-5 pt-5">I love taking photos because it allows me to capture moments that might
+    otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
+    words. I enjoy the way light, composition, and perspective come together to create something unique. Whether
+    it’s a breathtaking landscape, a fleeting expression, or the beauty in everyday life, photography helps me see
+    the world differently. It’s not just about taking pictures—it’s about preserving feelings, memories, and the way
+    I experience the world around me.</p>
+</div>
+</section>
+
+
+<section class="relative flex">
+<div class="bg-darkGray w-2/3 pb-5 flex flex-col justify-between relative">
+  <h5 class="text-pinkyWhite font-bold pl-5 text-2xl pt-5">Illustrations</h5>
+  <p class="text-pinkyWhite pl-5 pt-5">I love art and illustrating because it allows me to express emotions and
+    ideas that words can’t capture. Through drawing and painting, I can bring my imagination to life, create new
+    worlds, and share my perspective with others. I enjoy experimenting with colors, shapes, and textures to evoke
+    feelings and tell visual stories. Whether it’s a quick sketch or a detailed piece, art helps me see beauty in
+    the smallest details. It’s not just about making images—it’s about exploring creativity, emotions, and the way I
+    interpret the world around me.</p>
+    <div class="miniMeSection absolute  w-1/4">
+      <img class="size-75 -z-1 transform rotate-45" src="../components/images/mini_me.png" alt="">
+    </div>
+</div>
+</section>-->
 
   </section>
 
