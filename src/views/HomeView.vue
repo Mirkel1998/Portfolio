@@ -4,8 +4,8 @@ import FooterView from '../components/FooterView.vue';
 
 <template>
   <section>
-    <div class="hero-section">
-      <div class="hero-containter-text pl-4 pt-45">
+    <div class="hero-section flex justify-center center-items pb-10">
+    <div class="hero-containter-text pl-4 pt-45 md:!-ml-115">
         <h1 class="text-5xl text-purpleRain font-bold">
           LOGIC
         </h1>
@@ -19,38 +19,44 @@ import FooterView from '../components/FooterView.vue';
     </div>
   </section>
 
-  <section>
-    <div class="desciption">
-      <h4 class="text-4xl font-bold text-pinkyWhite pt-7 pl-5">Hello i'm Mikkel!</h4>
-      <div class="flex flex-col items-start gap-4">
-        <p class="text-pinkyWhite pl-5">Mikkel isn’t just awesome—he’s on a whole different level. Whether it’s his sharp
-        mind, unbeatable creativity, or just the way he makes everything look effortless, he’s the kind of person who
-        leaves an impact. Need a problem solved? Mikkel’s got it. Looking for inspiration? Just watch him work. He’s the
-        perfect blend of talent, determination, and pure good vibes. Honestly, the world needs more Mikkels. Mikkel
-        isn’t just awesome—he’s on a whole different level.</p>
-      <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded self-end">
-        About me
-      </button>
+
+    <section class="flex justify-center center-items pb-10">
+      <div class="description">
+        <h4 class="text-4xl font-bold text-pinkyWhite pt-7 pl-5">Hello i'm Mikkel!</h4>
+        <div class="flex flex-col items-start gap-4">
+          <p class="text-pinkyWhite pl-5">Mikkel isn’t just awesome—he’s on a whole different level. Whether it’s his sharp
+          mind, unbeatable creativity, or just the way he makes everything look effortless, he’s the kind of person who
+          leaves an impact. Need a problem solved? Mikkel’s got it. Looking for inspiration? Just watch him work. He’s the
+          perfect blend of talent, determination, and pure good vibes. Honestly, the world needs more Mikkels. Mikkel
+          isn’t just awesome—he’s on a whole different level.</p>
+          <div class="flex justify-end w-full">
+            <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded">
+              About me
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
   </section>
 
   
-  <section>
+  <section class="flex justify-center center-items pb-5 pt-5">
 <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg" src="../components/images/polaroid1.jpg" alt="">
     <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Photography</h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">I love taking photos because it allows me to capture moments that might
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite dark:text-white">Photography</h5>
+        <p class="mb-3 font-normal text-pinkyWhite">I love taking photos because it allows me to capture moments that might
     otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
     words. I enjoy the way light, composition, and perspective come together to create something unique.</p>
     </div>
 </a>
+</section>
 
+
+<section class="flex justify-center center-itmes pb-5 pt-5">
   <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
     <div class="flex flex-col justify-between p-4 leading-normal order-2 md:order-1">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Photography</h5>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite">Photography</h5>
+      <p class="mb-3 font-normal text-pinkyWhite">
         I love taking photos because it allows me to capture moments that might otherwise be forgotten. Through
         photography, I can freeze time, document emotions, and tell stories without words. I enjoy the way light,
         composition, and perspective come together to create something unique.
@@ -59,10 +65,10 @@ import FooterView from '../components/FooterView.vue';
     <img
       class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg order-1 md:order-2"
       src="../components/images/polaroid1.jpg"
-      alt=""
-    >
+      alt="">
   </a>
 </section>
+
 
 
   
@@ -111,7 +117,7 @@ import FooterView from '../components/FooterView.vue';
 
   </section>
 
-  <FooterView />
+  
 </template>
 
 <style>
@@ -139,5 +145,10 @@ import FooterView from '../components/FooterView.vue';
 .miniMeSection img {
   
 
+}
+
+.description {
+max-width: 900px;
+  
 }
 </style>

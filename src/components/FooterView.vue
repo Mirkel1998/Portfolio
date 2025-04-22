@@ -13,8 +13,9 @@
             <p class="text-pinkyWhite pt-2">Artworks</p>
         </div>
 
-        <div class="w-1/3">
-            <p class="text-purpleRain pr-10">Check out my github!</p>
+        <div class="w-1/3 pt-10 pl-50">
+            <p class="text-purpleRain">Check out my github!</p>
+        <img class="" src="../components/images/githubLogo.svg"  width="50" height="50" alt="">
         </div>
  
     </footer>

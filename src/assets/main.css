@@ -3,6 +3,7 @@
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 
+
 @theme {
   --color-purpleRain: #75459B;
   --color-hooverPink: #C63C96;
@@ -11,6 +12,3 @@
   --color-pinkyWhite: #FEF8FB;
 }
 
-#app {
-  max-width: 1280px;
-}

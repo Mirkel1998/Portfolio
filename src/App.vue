@@ -19,6 +19,7 @@ import FooterView from './components/FooterView.vue';
   </header>
 
   <RouterView />
+  <FooterView />
 </template>
 
 <style scoped>
@@ -34,7 +35,6 @@ header {
 }
 
 nav {
-  width: 100%;
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;

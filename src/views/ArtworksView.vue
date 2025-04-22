@@ -1,11 +1,11 @@
 <script setup>
-
+    import FooterView from '../components/FooterView.vue';
 </script>
 
 <template>
   <section><h1 class="text-purpleRain text-5xl font-bold pt-10 pb-10">Artworks</h1></section>
   
- <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+ <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-5 pb-10">
     <div>
         <img class="h-auto max-w-full rounded-lg" src="../components/images/polaroid1.jpg" alt="">
     </div>
@@ -43,6 +43,8 @@
         <img class="h-auto max-w-full rounded-lg" src="../components/images/darkPolaroid3.jpg" alt="">
     </div>
 </div>
+
+
 </template>
 
 <style>
