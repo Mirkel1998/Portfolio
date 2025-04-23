@@ -6,16 +6,18 @@
             <p class="text-purpleRain pl-5 text-xs pt-3">All rights reserved 2025</p>
         </div>
 
-        <div class="w-1/3 text-center">
-            <p class="text-pinkyWhite pt-5">Home</p>
-            <p class="text-pinkyWhite pt-2">About</p>
-            <p class="text-pinkyWhite pt-2">Projects</p>
-            <p class="text-pinkyWhite pt-2">Artworks</p>
+                <div class="w-1/3 text-center">
+            <router-link to="/" class="text-pinkyWhite block pt-5">Home</router-link>
+            <router-link to="/about" class="text-pinkyWhite block pt-2">About</router-link>
+            <router-link to="/projects" class="text-pinkyWhite block pt-2">Projects</router-link>
+            <router-link to="/artworks" class="text-pinkyWhite block pt-2">Artworks</router-link>
         </div>
 
         <div class="w-1/3 pt-10 pl-50">
             <p class="text-purpleRain">Check out my github!</p>
-        <img class="" src="../components/images/githubLogo.svg"  width="50" height="50" alt="">
+                <a href="https://github.com/Mirkel1998" target="_blank" rel="noopener noreferrer">
+          <img class="" src="../components/images/githubLogo.svg" width="50" height="50" alt="GitHub Logo">
+        </a>
         </div>
  
     </footer>

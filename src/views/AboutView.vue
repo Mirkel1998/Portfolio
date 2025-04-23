@@ -13,9 +13,13 @@ import FooterView from '../components/FooterView.vue';
 </div>
 
 <div class="flex w-full justify-center pb-5">
-<button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded self-end">
-        Download my CV 
-</button>
+<a 
+  href="../components/images/cv.pdf"
+  download="cv.pdf"
+  class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded self-end inline-block text-center"
+>
+  Download my CV
+</a>
 </div>
     
 

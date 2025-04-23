@@ -30,9 +30,12 @@ import FooterView from '../components/FooterView.vue';
           perfect blend of talent, determination, and pure good vibes. Honestly, the world needs more Mikkels. Mikkel
           isn’t just awesome—he’s on a whole different level.</p>
           <div class="flex justify-end w-full">
-            <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded">
+                       <router-link
+              to="/about"
+              class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded inline-block text-center"
+            >
               About me
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -75,9 +78,12 @@ import FooterView from '../components/FooterView.vue';
 
   <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna see my projects?</h4>
   <div class="flex items-center justify-center">
-    <button class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded !mb-10">
+      <router-link
+      to="/projects"
+      class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded !mb-10 inline-block text-center"
+    >
       Projects
-    </button>
+    </router-link>
   </div>
 
   <section>

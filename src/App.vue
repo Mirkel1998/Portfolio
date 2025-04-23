@@ -1,11 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import FooterView from './components/FooterView.vue';
+
+</script>
+
+
+<script setup>
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="50" height="50" />
+        <router-link to="/">
+      <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="50" height="50" />
+    </router-link>
 
     <div class="wrapper">
 

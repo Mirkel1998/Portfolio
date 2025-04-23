@@ -2,6 +2,8 @@
 @import './base.css';
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+
 
 
 @theme {
