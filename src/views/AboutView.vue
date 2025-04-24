@@ -8,8 +8,8 @@ import FooterView from '../components/FooterView.vue';
 </div>
 
 <div class="flex w-full flex-wrap justify-center pt-5">
-  <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg" src="../components/images/buisnessCard1.png" alt="">
-  <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg" src="../components/images/buisnessCard2.png" alt="">
+  <img class="object-cover w-full h-full md:h-auto md:w-1/3" src="../components/images/buisnessCard1.png" alt="">
+  <img class="object-cover w-full h-full md:h-auto md:w-1/3" src="../components/images/buisnessCard2.png" alt="">
 </div>
 
 <div class="flex w-full justify-center pb-5">
