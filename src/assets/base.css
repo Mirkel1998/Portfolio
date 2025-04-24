@@ -77,3 +77,10 @@ body {
   font-style: normal;
 }
 
+
+.titleFont {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}

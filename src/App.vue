@@ -11,7 +11,7 @@ import FooterView from './components/FooterView.vue';
 
 <template>
   <header>
-        <router-link to="/">
+    <router-link to="/">
       <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="50" height="50" />
     </router-link>
 

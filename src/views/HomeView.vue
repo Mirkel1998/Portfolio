@@ -5,14 +5,14 @@ import FooterView from '../components/FooterView.vue';
 <template>
   <section>
     <div class="hero-section flex justify-center center-items pb-10">
-    <div class="hero-containter-text pl-4 pt-45 md:!-ml-115">
-        <h1 class="text-5xl text-purpleRain font-bold">
+      <div class="hero-containter-text pl-4 pt-45 md:!-ml-115">
+        <h1 class="text-5xl text-purpleRain font-bold titleFont">
           LOGIC
         </h1>
-        <h2 class="text-5xl text-pinkyWhite font-bold">
+        <h2 class="text-5xl text-pinkyWhite font-bold titleFont">
           CREATIVITY
         </h2>
-        <h3 class="text-5xl text-purpleRain font-bold">
+        <h3 class="text-5xl text-purpleRain font-bold titleFont">
           AND PERSONALITY
         </h3>
       </div>
@@ -20,68 +20,75 @@ import FooterView from '../components/FooterView.vue';
   </section>
 
 
-    <section class="flex justify-center center-items pb-10">
-      <div class="description">
-        <h4 class="text-4xl font-bold text-pinkyWhite pt-7 pl-5">Hello i'm Mikkel!</h4>
-        <div class="flex flex-col items-start gap-4">
-          <p class="text-pinkyWhite pl-5">Mikkel isn’t just awesome—he’s on a whole different level. Whether it’s his sharp
-          mind, unbeatable creativity, or just the way he makes everything look effortless, he’s the kind of person who
-          leaves an impact. Need a problem solved? Mikkel’s got it. Looking for inspiration? Just watch him work. He’s the
-          perfect blend of talent, determination, and pure good vibes. Honestly, the world needs more Mikkels. Mikkel
-          isn’t just awesome—he’s on a whole different level.</p>
-          <div class="flex justify-end w-full">
-                       <router-link
-              to="/about"
-              class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded inline-block text-center"
-            >
-              About me
-            </router-link>
-          </div>
+  <section class="flex justify-center center-items pb-10">
+    <div class="description">
+      <h4 class="text-4xl font-bold text-pinkyWhite pt-7 pl-5 titleFont">Hello i'm Mikkel!</h4>
+      <div class="flex flex-col items-start gap-4">
+        <p class="text-pinkyWhite pl-5 pt-5">I'm a multimediadesign student at EASV. I have a passion for anything
+          creative. I love taking photos,
+          painting, illustrating, and creating websites. I enjoy the process of bringing ideas to life and exploring new
+          ways to express myself. I strive to somehow combine my love for creativity with technology, and I am always
+          looking for new ways to learn and grow. I believe that creativity is a powerful tool for problem-solving and
+          innovation, and I am excited to see where my journey will take me.</p>
+        <div class="flex justify-end w-full">
+          <router-link to="/about"
+            class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded inline-block text-center titleFont">
+            About me
+          </router-link>
         </div>
       </div>
+    </div>
   </section>
 
-  
+
   <section class="flex justify-center center-items pb-5 pt-5">
-<a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
-    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg" src="../components/images/polaroid1.jpg" alt="">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite dark:text-white">Photography</h5>
-        <p class="mb-3 font-normal text-pinkyWhite">I love taking photos because it allows me to capture moments that might
-    otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
-    words. I enjoy the way light, composition, and perspective come together to create something unique.</p>
-    </div>
-</a>
-</section>
+    <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
+      <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg"
+        src="../components/images/polaroid1.jpg" alt="">
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite dark:text-white titleFont">Photography</h5>
+        <p class="mb-3 font-normal text-pinkyWhite pt-5">I love taking photos because it allows me to capture moments
+          that might
+          otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
+          words. I enjoy the way light, composition, and perspective come together to create something unique.</p>
+        <p class="mb-3 font-normal text-pinkyWhite pt-5">This photograph was the winner for a contest we had 1st
+          semester at EASV. Each student had free reign over the theme and feeling for the photograph
+          the only sort of restriction was that we coould only use simple editing tools like cropping and brightness.
+        </p>
+      </div>
+    </a>
+  </section>
 
 
-<section class="flex justify-center center-itmes pb-5 pt-5">
-  <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
-    <div class="flex flex-col justify-between p-4 leading-normal order-2 md:order-1">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite">Photography</h5>
-      <p class="mb-3 font-normal text-pinkyWhite">
-        I love taking photos because it allows me to capture moments that might otherwise be forgotten. Through
-        photography, I can freeze time, document emotions, and tell stories without words. I enjoy the way light,
-        composition, and perspective come together to create something unique.
-      </p>
-    </div>
-    <img
-      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg order-1 md:order-2"
-      src="../components/images/polaroid1.jpg"
-      alt="">
-  </a>
-</section>
+  <section class="flex justify-center center-itmes pb-5 pt-5">
+    <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
+      <div class="flex flex-col justify-between p-4 leading-normal order-2 md:order-1">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite titleFont">Illustrating</h5>
+        <p class="mb-3 font-normal text-pinkyWhite pt-5">
+          I love art and illustrating because it allows me to express emotions and ideas that words can’t capture.
+          Through drawing and painting, I can bring my imagination to life, create new worlds,
+          also it's just good old fun!
+        </p>
+        <p class="mb-3 font-normal text-pinkyWhite pt-5">
+          This illustrating was made for an assignment were we had to create a ourself as some type of character. I
+          chose to make myself in SouthPark style.
+          The assignment was meant for us to learn simple tools in illustrator.
+        </p>
+      </div>
+      <img
+        class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg order-1 md:order-2"
+        src="../components/images/miniMe.jpg" alt="">
+    </a>
+  </section>
 
 
 
-  
 
-  <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center">Wanna see my projects?</h4>
+
+  <h4 class="text-4xl text-purpleRain font-bold pt-10 pl-5 pb-7 text-center titleFont">Wanna see my projects?</h4>
   <div class="flex items-center justify-center">
-      <router-link
-      to="/projects"
-      class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded !mb-10 inline-block text-center"
-    >
+    <router-link to="/projects"
+      class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-2 px-4 rounded !mb-10 inline-block text-center titleFont">
       Projects
     </router-link>
   </div>
@@ -123,7 +130,7 @@ import FooterView from '../components/FooterView.vue';
 
   </section>
 
-  
+
 </template>
 
 <style>
@@ -142,19 +149,16 @@ import FooterView from '../components/FooterView.vue';
 .miniMeSection {
   position: absolute;
   top: -20%;
-  right:-10%;
+  right: -10%;
   display: flex;
   justify-content: flex-end;
 }
 
 
-.miniMeSection img {
-  
-
-}
+.miniMeSection img {}
 
 .description {
-max-width: 900px;
-  
+  max-width: 900px;
+
 }
 </style>
