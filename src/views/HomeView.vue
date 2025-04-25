@@ -42,8 +42,8 @@ import FooterView from '../components/FooterView.vue';
 
 
   <section class="flex justify-center center-items pb-5 pt-5">
-    <a href="#" class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
-      <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg"
+    <div class="flex flex-col items-center bg-darkGray shadow-sm md:flex-row w-full max-w-5xl mx-auto">
+      <img class="object-cover w-full h-fit md:h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg"
         src="../components/images/polaroid1.jpg" alt="">
       <div class="flex flex-col justify-between p-4 leading-normal">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-pinkyWhite dark:text-white titleFont">Photography</h5>
@@ -52,11 +52,11 @@ import FooterView from '../components/FooterView.vue';
           otherwise be forgotten. Through photography, I can freeze time, document emotions, and tell stories without
           words. I enjoy the way light, composition, and perspective come together to create something unique.</p>
         <p class="mb-3 font-normal text-pinkyWhite pt-5">This photograph was the winner for a contest we had 1st
-          semester at EASV. Each student had free reign over the theme and feeling for the photograph
-          the only sort of restriction was that we coould only use simple editing tools like cropping and brightness.
+          semester at EASV. Each student had free reign over the theme and feeling for the photograph.
+          The only sort of restriction was that we coould only use simple editing tools like cropping and brightness.
         </p>
       </div>
-    </a>
+    </div>
   </section>
 
 
@@ -70,13 +70,13 @@ import FooterView from '../components/FooterView.vue';
           also it's just good old fun!
         </p>
         <p class="mb-3 font-normal text-pinkyWhite pt-5">
-          This illustrating was made for an assignment were we had to create a ourself as some type of character. I
-          chose to make myself in SouthPark style.
+          This illustrating was made for an assignment were we had to create ourself as some type of character. I
+          chose to make myself in SouthPark-style.
           The assignment was meant for us to learn simple tools in illustrator.
         </p>
       </div>
       <img
-        class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-1/3 md:rounded-none md:rounded-s-lg order-1 md:order-2"
+        class="object-cover w-full h-fit md:h-96 md:h-auto md:w-1/3 md:rounded-none order-1 md:order-2"
         src="../components/images/miniMe.jpg" alt="">
     </a>
   </section>

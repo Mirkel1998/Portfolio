@@ -12,8 +12,8 @@ import web_plastic_2 from '../components/images/webPlastic2.jpg'
 import web_plastic_3 from '../components/images/webPlastic3.jpg'
 
 // Import images for the second carousel
-import mini_me from '../components/images/mini_me.png'
-import test from '../components/images/test.png'
+import web_maison_1 from '../components/images/webMaison1.jpg'
+import web_maison_2 from '../components/images/webMaison2.jpg'
 
 const slides1 = ref([
   {
@@ -29,10 +29,10 @@ const slides1 = ref([
 
 const slides2 = ref([
   {
-    image: mini_me,
+    image: web_maison_1,
   },
   {
-    image: test,
+    image: web_maison_2,
   },
 ])
 </script>
@@ -50,17 +50,17 @@ const slides2 = ref([
       <div class="w-full bg-darkGray p-5 text-sm">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
           <div class="text-pinkyWhite">
-            <p><span class="font-bold">PROJECT:</span>Semester exam</p>
-            <p><span class="font-bold">DURATION:</span> 5 weeks</p>
-            <p><span class="font-bold">PERIOD:</span> November - December 2024</p>
-            <p><span class="font-bold">TEAM:</span> 4 members</p>
-            <p><span class="font-bold">MY CONTRIBUTION:</span> Concept design, brand design, graphic design, UX
+            <p><span class="font-bold">Project:</span> Semester exam</p>
+            <p><span class="font-bold">Duration:</span> 5 weeks</p>
+            <p><span class="font-bold">Period:</span> November - December 2024</p>
+            <p><span class="font-bold">Team:</span> 4 members</p>
+            <p><span class="font-bold">My contribution:</span> Concept design, brand design, graphic design, UX
               research, website front-end development</p>
           </div>
           <div class="text-pinkyWhite">
-            <p><span class="font-bold">METHODS:</span> Desk research, survey, interviews, user personas,
+            <p><span class="font-bold">Methods:</span> Desk research, survey, interviews, user personas,
               empathy/affinity/journey maps</p>
-            <p><span class="font-bold">TOOLS:</span> Photoshop, Illustrator, InDesign, Figma, HTML, CSS, Github</p>
+            <p><span class="font-bold">Tools:</span> Photoshop, Illustrator, InDesign, Figma, HTML, CSS, Github</p>
           </div>
         </div>
       </div>
@@ -77,15 +77,15 @@ const slides2 = ref([
       <div class="w-full bg-darkGray p-5 text-sm">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
           <div class="text-pinkyWhite">
-            <p><span class="font-bold">PROJECT:</span>Design and time managment</p>
-            <p><span class="font-bold">DURATION:</span>1 week</p>
-            <p><span class="font-bold">PERIOD:</span>September 2024</p>
-            <p><span class="font-bold">TEAM:</span> 3 members</p>
-            <p><span class="font-bold">MY CONTRIBUTION:</span> UI/UX design, logo design,</p>
+            <p><span class="font-bold">Project:</span> Design and time managment</p>
+            <p><span class="font-bold">Duration:</span> 1 week</p>
+            <p><span class="font-bold">Period:</span> September 2024</p>
+            <p><span class="font-bold">Team:</span> 3 members</p>
+            <p><span class="font-bold">My contribution:</span> UI/UX design, logo design,</p>
           </div>
           <div class="text-pinkyWhite">
-            <p><span class="font-bold">METHODS:</span> Research Wireframing, prototyping, usability testing, WBS,</p>
-            <p><span class="font-bold">TOOLS:</span> Figma, illustrator, photoshop, notion</p>
+            <p><span class="font-bold">Methods:</span> Research Wireframing, prototyping, usability testing, WBS,</p>
+            <p><span class="font-bold">Tools:</span> Figma, illustrator, photoshop, notion</p>
           </div>
         </div>
       </div>
