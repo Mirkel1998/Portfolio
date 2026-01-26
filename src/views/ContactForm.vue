@@ -45,62 +45,61 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <form @submit.prevent="sendEmail">
-            <label>Name</label>
-            <input type="text" v-model="formData.name" placeholder="Your Name" required>
-            <label>Email</label>
-            <input type="email" v-model="formData.email" placeholder="Your Email" required>
-            <label>Message</label>
-            <textarea v-model="formData.message" cols="30" rows="5" placeholder="Message" required></textarea>
+    <section class="flex justify-center center-items pb-10 pt-10">
+        <div class="contact-wrapper max-w-3xl w-full mx-auto px-4">
+            <h1 class="text-5xl text-purpleRain font-bold titleFont text-center mb-8">
+                GET IN TOUCH
+            </h1>
 
-            <input type="submit" value="Send">
-        </form>
-    </div>
+            <div class="bg-darkGray p-8 rounded-lg shadow-sm">
+                <p class="text-pinkyWhite mb-6 text-center">
+                    Have a question or want to work together? Feel free to reach out!
+                </p>
+
+                <form @submit.prevent="sendEmail" class="space-y-6">
+                    <div class="form-group">
+                        <label for="name" class="text-pinkyWhite font-bold mb-2 block">Name</label>
+                        <input type="text" id="name" v-model="formData.name" placeholder="Your Name" required
+                            class="w-full p-3 rounded bg-black text-pinkyWhite border border-gray-700 focus:border-purpleRain focus:outline-none transition">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="text-pinkyWhite font-bold mb-2 block">Email</label>
+                        <input type="email" id="email" v-model="formData.email" placeholder="your.email@example.com"
+                            required
+                            class="w-full p-3 rounded bg-black text-pinkyWhite border border-gray-700 focus:border-purpleRain focus:outline-none transition">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="text-pinkyWhite font-bold mb-2 block">Message</label>
+                        <textarea id="message" v-model="formData.message" cols="30" rows="6"
+                            placeholder="Your message..." required
+                            class="w-full p-3 rounded bg-black text-pinkyWhite border border-gray-700 focus:border-purpleRain focus:outline-none transition resize-vertical"></textarea>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="bg-darkGray hover:bg-hooverPink text-pinkyWhite font-bold py-3 px-8 rounded titleFont transition-colors border border-purpleRain">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </template>
 
 <style scoped>
-* {
-    box-sizing: border-box;
+.contact-wrapper {
+    max-width: 900px;
 }
 
-.container {
-    display: block;
-    margin: auto;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    width: 50%;
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
-label {
-    float: left;
-}
-
-input[type=text],
-[type=email],
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
 }
 </style>
