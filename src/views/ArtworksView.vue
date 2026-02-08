@@ -15,6 +15,10 @@ import kittyPolaroid1 from '../components/images/kittyPolaroid1.jpg';
 import darkPolaroid1 from '../components/images/darkPolaroid1.jpg';
 import darkPolaroid2 from '../components/images/darkPolaroid2.jpg';
 import darkPolaroid3 from '../components/images/darkPolaroid3.jpg';
+import drone1 from '../components/images/drone1.jpg';
+import drone2 from '../components/images/drone2.jpg';
+import drone3 from '../components/images/drone3.png';
+import drone4 from '../components/images/drone4.png';
 
 const selectedImage = ref(null);
 const images = ref([
@@ -30,6 +34,13 @@ const images = ref([
     { src: polaroid3, title: 'Embers', category: 'Photography' },
     { src: forrestPolaroid2, title: 'Shiny Greens', category: 'Nature' },
     { src: darkPolaroid1, title: 'Watching', category: 'Artistic' }
+]);
+
+const featuredImages = ref([
+    { src: drone1, title: 'Red Town', category: 'Drone' },
+    { src: drone2, title: 'Lake from above', category: 'Drone' },
+    { src: drone3, title: 'Cloudline', category: 'Drone' },
+    { src: drone4, title: 'Field Sweep', category: 'Drone' }
 ]);
 
 const openLightbox = (image) => {
@@ -62,6 +73,21 @@ const closeLightbox = () => {
                     <div class="image-overlay">
                         <div class="overlay-content">
                             <h3 class="image-title">{{ image.title }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-gallery">
+            <div v-for="(image, index) in featuredImages" :key="`featured-${index}`" class="featured-card"
+                @click="openLightbox(image)">
+                <div class="featured-image-frame">
+                    <img :src="image.src" :alt="image.title" class="featured-image">
+                    <div class="featured-overlay">
+                        <div class="featured-content">
+                            <h3 class="featured-title">{{ image.title }}</h3>
+                            <span class="featured-tag">{{ image.category }}</span>
                         </div>
                     </div>
                 </div>
@@ -222,6 +248,105 @@ const closeLightbox = () => {
             rgba(0, 255, 255, 0.05) 2px,
             rgba(0, 255, 255, 0.05) 4px);
     pointer-events: none;
+}
+
+/* Featured Strip */
+.featured-gallery {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.featured-card {
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 0.7s ease-out 0.2s forwards;
+}
+
+.featured-image-frame {
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #1a1a1a;
+    background: #000033;
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.7),
+        0 0 18px rgba(0, 255, 255, 0.25),
+        6px 6px 0px #000033;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-image-frame:hover {
+    transform: translate(-3px, -3px);
+    box-shadow:
+        inset 0 0 26px rgba(0, 0, 0, 0.75),
+        0 0 26px rgba(0, 255, 255, 0.4),
+        8px 8px 0px #000033;
+}
+
+.featured-image {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    filter: contrast(1.15) saturate(1.2);
+    transition: transform 0.3s ease;
+}
+
+.featured-image-frame:hover .featured-image {
+    transform: scale(1.03);
+}
+
+.featured-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(0, 0, 51, 0.15) 0%, rgba(0, 0, 51, 0.9) 100%),
+        repeating-linear-gradient(0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(0, 255, 255, 0.07) 3px,
+            rgba(0, 255, 255, 0.07) 6px);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.featured-image-frame:hover .featured-overlay {
+    opacity: 1;
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.featured-title {
+    font-family: 'Press Start 2P', cursive;
+    color: #00FFFF;
+    font-size: 1rem;
+    text-shadow:
+        2px 2px 0px #000033,
+        0 0 8px rgba(0, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.featured-tag {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+    padding: 0.3rem 0.6rem;
+    background: rgba(0, 0, 51, 0.9);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+    width: fit-content;
+    text-transform: uppercase;
 }
 
 /* Image Overlay */
@@ -495,6 +620,17 @@ const closeLightbox = () => {
     .gallery-container {
         padding: 0 0.5rem;
         column-gap: 1rem;
+    }
+
+    .featured-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .featured-image-frame {
+        border-width: 8px;
     }
 
     .image-wrapper {
