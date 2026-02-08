@@ -18,18 +18,18 @@ import darkPolaroid3 from '../components/images/darkPolaroid3.jpg';
 
 const selectedImage = ref(null);
 const images = ref([
-    { src: polaroid1, title: 'Polaroid 1', category: 'Photography' },
-    { src: polaroid2, title: 'Polaroid 2', category: 'Photography' },
-    { src: polaroid3, title: 'Polaroid 3', category: 'Photography' },
-    { src: forrestPolaroid1, title: 'Forest 1', category: 'Nature' },
-    { src: forrestPolaroid3, title: 'Forest 3', category: 'Nature' },
-    { src: forrestPolaroid2, title: 'Forest 2', category: 'Nature' },
-    { src: berryPolaroid1, title: 'Berry 1', category: 'Nature' },
-    { src: kittyPolaroid1, title: 'Kitty', category: 'Animals' },
-    { src: berryPolaroid2, title: 'Berry 2', category: 'Nature' },
-    { src: darkPolaroid1, title: 'Dark 1', category: 'Artistic' },
     { src: darkPolaroid2, title: 'Dark 2', category: 'Artistic' },
-    { src: darkPolaroid3, title: 'Dark 3', category: 'Artistic' }
+    { src: forrestPolaroid1, title: 'Forest 1', category: 'Nature' },
+    { src: polaroid2, title: 'Polaroid 2', category: 'Photography' },
+    { src: berryPolaroid1, title: 'Berry 1', category: 'Nature' },
+    { src: darkPolaroid3, title: 'Dark 3', category: 'Artistic' },
+    { src: polaroid1, title: 'Polaroid 1', category: 'Photography' },
+    { src: kittyPolaroid1, title: 'Kitty', category: 'Animals' },
+    { src: forrestPolaroid3, title: 'Forest 3', category: 'Nature' },
+    { src: berryPolaroid2, title: 'Berry 2', category: 'Nature' },
+    { src: polaroid3, title: 'Polaroid 3', category: 'Photography' },
+    { src: forrestPolaroid2, title: 'Forest 2', category: 'Nature' },
+    { src: darkPolaroid1, title: 'Dark 1', category: 'Artistic' }
 ]);
 
 const openLightbox = (image) => {
@@ -46,10 +46,10 @@ const closeLightbox = () => {
         <!-- Hero Header -->
         <div class="header-wrapper">
             <h1 class="text-purpleRain text-6xl md:text-7xl font-bold titleFont animate-fade-in-down">
-                My Artworks
+                My Photos
             </h1>
             <p class="text-pinkyWhite text-lg mt-4 animate-fade-in">
-                A collection of my photography and artistic creations
+                Polaroids and pixels - capturing moments in retro style
             </p>
         </div>
 
@@ -134,25 +134,96 @@ const closeLightbox = () => {
 .image-wrapper {
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* CRT TV/Console Frame */
+    border: 12px solid #2a2a2a;
+    border-radius: 0;
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.8),
+        inset 0 0 50px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(0, 255, 255, 0.3),
+        0 10px 0 #1a1a1a,
+        0 15px 0 #0a0a0a,
+        8px 8px 0px #000033;
+    transition: transform 0.1s steps(2), box-shadow 0.1s steps(2);
+    background: #000033;
+}
+
+.image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 12px;
+    background: linear-gradient(90deg,
+            #ff0000 0%,
+            #ff0000 16%,
+            #00ff00 16%,
+            #00ff00 32%,
+            #0000ff 32%,
+            #0000ff 48%,
+            #ffff00 48%,
+            #ffff00 64%,
+            #ff00ff 64%,
+            #ff00ff 80%,
+            #00ffff 80%,
+            #00ffff 100%);
+    border: 2px solid #1a1a1a;
+    border-radius: 2px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 20px;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    border: 3px solid #2a2a2a;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .image-wrapper:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 24px rgba(168, 85, 247, 0.3);
+    transform: translate(-4px, -4px);
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.8),
+        inset 0 0 50px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(0, 255, 255, 0.5),
+        0 0 60px rgba(255, 0, 255, 0.3),
+        0 10px 0 #1a1a1a,
+        0 15px 0 #0a0a0a,
+        12px 12px 0px #000033;
 }
 
 .gallery-image {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.1s steps(2);
+    filter: contrast(1.2) saturate(1.3);
 }
 
 .image-wrapper:hover .gallery-image {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.gallery-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 255, 255, 0.05) 2px,
+            rgba(0, 255, 255, 0.05) 4px);
+    pointer-events: none;
 }
 
 /* Image Overlay */
@@ -162,12 +233,18 @@ const closeLightbox = () => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top,
-            rgba(0, 0, 0, 0.8) 0%,
-            rgba(0, 0, 0, 0.4) 50%,
+    background:
+        repeating-linear-gradient(0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 255, 255, 0.1) 2px,
+            rgba(0, 255, 255, 0.1) 4px),
+        linear-gradient(to top,
+            rgba(0, 0, 51, 0.95) 0%,
+            rgba(0, 0, 51, 0.6) 50%,
             transparent 100%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.1s steps(2);
     display: flex;
     align-items: flex-end;
     padding: 1.5rem;
@@ -191,14 +268,28 @@ const closeLightbox = () => {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.25rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #00FFFF;
+    text-shadow:
+        2px 2px 0px #000033,
+        0 0 10px #00FFFF;
+    line-height: 1.8;
 }
 
 .image-category {
     display: inline-block;
-    background-color: rgba(168, 85, 247, 0.8);
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.875rem;
+    background-color: #000033;
+    color: #FFFF00;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid #FFFF00;
+    border-radius: 0;
+    font-size: 0.75rem;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    box-shadow:
+        3px 3px 0px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(255, 255, 0, 0.5);
+    line-height: 1.8;
 }
 
 /* Lightbox */

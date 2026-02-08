@@ -132,14 +132,14 @@ export default {
 </script>
 
 <template>
-    <section class="flex justify-center center-items pb-10 pt-10">
-        <div class="contact-wrapper max-w-3xl w-full mx-auto px-4">
-            <h1 class="text-5xl text-purpleRain font-bold titleFont text-center mb-12">
-                GET IN TOUCH
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            <h1 class="contact-title">
+                // GET IN TOUCH //
             </h1>
 
-            <div class="bg-darkGray p-8 rounded-lg shadow-sm">
-                <p class="text-pinkyWhite mb-6 text-center">
+            <div class="form-container">
+                <p class="form-description">
                     Have a question or want to work together? Feel free to reach out!
                 </p>
 
@@ -152,30 +152,28 @@ export default {
                     </div>
 
                     <div class="form-group">
-                        <label for="name" class="text-pinkyWhite font-bold mb-2 block">Name</label>
-                        <input type="text" id="name" v-model="formData.name" placeholder="Your Name" required
-                            class="w-full p-3 rounded bg-black text-pinkyWhite border border-gray-700 focus:border-purpleRain focus:outline-none transition">
+                        <label for="name" class="form-label">► NAME:</label>
+                        <input type="text" id="name" v-model="formData.name" placeholder="ENTER YOUR NAME" required
+                            class="form-input">
                     </div>
 
                     <div class="form-group">
-                        <label for="email" class="text-pinkyWhite font-bold mb-2 block">Email</label>
-                        <input type="email" id="email" v-model="formData.email" placeholder="your.email@example.com"
-                            required
-                            class="w-full p-3 rounded bg-black text-pinkyWhite border border-gray-700 focus:border-purpleRain focus:outline-none transition">
+                        <label for="email" class="form-label">► EMAIL:</label>
+                        <input type="email" id="email" v-model="formData.email" placeholder="YOUR.EMAIL@EXAMPLE.COM"
+                            required class="form-input">
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="text-pinkyWhite font-bold mb-2 block">Message</label>
+                        <label for="message" class="form-label">► MESSAGE:</label>
                         <textarea id="message" v-model="formData.message" cols="30" rows="6"
-                            placeholder="Your message..." required
-                            class="w-full p-3 rounded bg-black text-pinkyWhite border border-gray-700 focus:border-purpleRain focus:outline-none transition resize-vertical"></textarea>
+                            placeholder="TYPE YOUR MESSAGE HERE..." required
+                            class="form-input form-textarea"></textarea>
                     </div>
 
-                    <div class="flex justify-center">
-                        <button type="submit" :disabled="isSubmitting"
-                            :class="{ 'opacity-50 cursor-not-allowed': isSubmitting }"
-                            class="bg-darkGray hover:bg-hoverPink text-pinkyWhite font-bold py-3 px-8 rounded titleFont transition-colors border border-purpleRain">
-                            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                    <div class="button-container">
+                        <button type="submit" :disabled="isSubmitting" :class="{ 'button-disabled': isSubmitting }"
+                            class="submit-button">
+                            {{ isSubmitting ? '>> SENDING...' : '>> SEND MESSAGE' }}
                         </button>
                     </div>
                 </form>
@@ -185,17 +183,171 @@ export default {
 </template>
 
 <style scoped>
+.contact-section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .contact-wrapper {
-    max-width: 900px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.contact-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #00FFFF;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    text-shadow:
+        3px 3px 0px #000033,
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: 0.8;
+    }
+}
+
+.form-container {
+    background: #1a1a3e;
+    border: 4px solid #FF00FF;
+    padding: 2.5rem;
+    box-shadow:
+        8px 8px 0px #000033,
+        0 0 30px rgba(255, 0, 255, 0.5);
+    position: relative;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid rgba(255, 0, 255, 0.3);
+    pointer-events: none;
+}
+
+.form-description {
+    font-family: 'VT323', monospace;
+    color: #F8F8FF;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
 }
 
-input:focus,
-textarea:focus {
-    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+.form-label {
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    color: #FFFF00;
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background: #000033;
+    color: #00FFFF;
+    border: 3px solid #00FFFF;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    transition: all 0.1s steps(2);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.form-input::placeholder {
+    color: rgba(0, 255, 255, 0.4);
+    font-family: 'VT323', monospace;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #FFFF00;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 255, 0, 0.6);
+    background: rgba(255, 255, 0, 0.05);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.submit-button {
+    background: #000033;
+    color: #00FF00;
+    padding: 1rem 2.5rem;
+    border: 4px solid #00FF00;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.1s steps(2);
+    box-shadow:
+        8px 8px 0px #000033,
+        0 0 20px rgba(0, 255, 0, 0.5);
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.submit-button:hover:not(.button-disabled) {
+    background: #00FF00;
+    color: #000033;
+    transform: translate(-4px, -4px);
+    box-shadow:
+        12px 12px 0px #000033,
+        0 0 30px rgba(0, 255, 0, 0.8);
+}
+
+.submit-button:active:not(.button-disabled) {
+    transform: translate(0, 0);
+    box-shadow:
+        4px 4px 0px #000033,
+        0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .honeypot-field {
@@ -205,5 +357,24 @@ textarea:focus {
     height: 1px;
     opacity: 0;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 0.8rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-label {
+        font-size: 0.6rem;
+    }
+
+    .submit-button {
+        font-size: 0.6rem;
+        padding: 0.75rem 1.5rem;
+    }
 }
 </style>

@@ -56,31 +56,81 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 body {
-
-
-
-
   min-height: 100vh;
   color: var(--color-text);
-  background: #161616;
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  background: #000033;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 255, 0.03) 0px,
+      transparent 1px,
+      transparent 2px,
+      rgba(0, 255, 255, 0.03) 3px
+    ),
+    linear-gradient(
+      180deg,
+      #000033 0%,
+      #0a0a4a 50%,
+      #000033 100%
+    );
+  line-height: 1.8;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  position: relative;
 }
 
+/* CRT Scanline Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  animation: scanline 8s linear infinite;
+}
+
+/* CRT Screen Curve Effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
 
 .titleFont {
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
