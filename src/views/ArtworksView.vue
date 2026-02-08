@@ -37,10 +37,10 @@ const images = ref([
 ]);
 
 const featuredImages = ref([
-    { src: drone1, title: 'Red Town', category: 'Drone' },
-    { src: drone2, title: 'Lake from above', category: 'Drone' },
-    { src: drone3, title: 'Cloudline', category: 'Drone' },
-    { src: drone4, title: 'Field Sweep', category: 'Drone' }
+    { src: drone1, title: 'Twilight', category: 'Drone' },
+    { src: drone2, title: 'Another Perspective', category: 'Drone' },
+    { src: drone3, title: 'SunSet', category: 'Drone' },
+    { src: drone4, title: 'DayTime', category: 'Drone' }
 ]);
 
 const openLightbox = (image) => {
