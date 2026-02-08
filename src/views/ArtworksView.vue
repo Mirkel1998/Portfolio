@@ -18,18 +18,18 @@ import darkPolaroid3 from '../components/images/darkPolaroid3.jpg';
 
 const selectedImage = ref(null);
 const images = ref([
-    { src: darkPolaroid2, title: 'Dark 2', category: 'Artistic' },
-    { src: forrestPolaroid1, title: 'Forest 1', category: 'Nature' },
-    { src: polaroid2, title: 'Polaroid 2', category: 'Photography' },
-    { src: berryPolaroid1, title: 'Berry 1', category: 'Nature' },
-    { src: darkPolaroid3, title: 'Dark 3', category: 'Artistic' },
-    { src: polaroid1, title: 'Polaroid 1', category: 'Photography' },
+    { src: darkPolaroid2, title: 'They are coming', category: 'Artistic' },
+    { src: forrestPolaroid1, title: 'Turning a leaf', category: 'Nature' },
+    { src: polaroid2, title: 'Rotting away', category: 'Photography' },
+    { src: berryPolaroid1, title: 'Before', category: 'Nature' },
+    { src: darkPolaroid3, title: 'Staring   ', category: 'Artistic' },
+    { src: polaroid1, title: 'Transparent', category: 'Photography' },
     { src: kittyPolaroid1, title: 'Kitty', category: 'Animals' },
-    { src: forrestPolaroid3, title: 'Forest 3', category: 'Nature' },
-    { src: berryPolaroid2, title: 'Berry 2', category: 'Nature' },
-    { src: polaroid3, title: 'Polaroid 3', category: 'Photography' },
-    { src: forrestPolaroid2, title: 'Forest 2', category: 'Nature' },
-    { src: darkPolaroid1, title: 'Dark 1', category: 'Artistic' }
+    { src: forrestPolaroid3, title: 'Tunnel Vision', category: 'Nature' },
+    { src: berryPolaroid2, title: 'Stages of life', category: 'Nature' },
+    { src: polaroid3, title: 'Embers', category: 'Photography' },
+    { src: forrestPolaroid2, title: 'Shiny Greens', category: 'Nature' },
+    { src: darkPolaroid1, title: 'Watching', category: 'Artistic' }
 ]);
 
 const openLightbox = (image) => {
@@ -46,10 +46,10 @@ const closeLightbox = () => {
         <!-- Hero Header -->
         <div class="header-wrapper">
             <h1 class="text-purpleRain text-6xl md:text-7xl font-bold titleFont animate-fade-in-down">
-                My Photos
+                Photos
             </h1>
             <p class="text-pinkyWhite text-lg mt-4 animate-fade-in">
-                Polaroids and pixels - capturing moments in retro style
+                Polaroids and pixels - who would have thunk it? <br>
             </p>
         </div>
 
@@ -62,7 +62,6 @@ const closeLightbox = () => {
                     <div class="image-overlay">
                         <div class="overlay-content">
                             <h3 class="image-title">{{ image.title }}</h3>
-                            <span class="image-category">{{ image.category }}</span>
                         </div>
                     </div>
                 </div>
@@ -82,7 +81,6 @@ const closeLightbox = () => {
                     <img :src="selectedImage.src" :alt="selectedImage.title" class="lightbox-image">
                     <div class="lightbox-info">
                         <h2 class="text-pinkyWhite text-2xl font-bold">{{ selectedImage.title }}</h2>
-                        <p class="text-purpleRain">{{ selectedImage.category }}</p>
                     </div>
                 </div>
             </div>
@@ -299,7 +297,16 @@ const closeLightbox = () => {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(0, 255, 255, 0.05) 0px,
+            rgba(0, 255, 255, 0.05) 2px,
+            rgba(0, 0, 0, 0.95) 2px,
+            rgba(0, 0, 0, 0.95) 4px),
+        radial-gradient(circle at top,
+            rgba(255, 0, 255, 0.15) 0%,
+            rgba(0, 0, 51, 0.95) 45%,
+            rgba(0, 0, 0, 0.98) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,49 +318,115 @@ const closeLightbox = () => {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    background: rgba(168, 85, 247, 0.8);
-    border: none;
-    border-radius: 50%;
+    background: #000033;
+    border: 3px solid #00FFFF;
+    border-radius: 0;
     width: 48px;
     height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.1s steps(2);
     z-index: 1001;
+    box-shadow:
+        4px 4px 0px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(0, 255, 255, 0.6);
 }
 
 .close-button:hover {
-    background: rgba(236, 72, 153, 0.9);
-    transform: rotate(90deg);
+    background: #00FFFF;
+    color: #000033;
+    transform: translate(-2px, -2px);
+    box-shadow:
+        6px 6px 0px rgba(0, 0, 0, 0.8),
+        0 0 18px rgba(0, 255, 255, 0.9);
 }
 
 .close-button svg {
     width: 24px;
     height: 24px;
-    color: white;
+    color: #00FFFF;
+}
+
+.close-button:hover svg {
+    color: #000033;
 }
 
 .lightbox-content {
-    max-width: 90vw;
+    max-width: min(900px, 92vw);
     max-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    background: #0a0a4a;
+    border: 4px solid #FF00FF;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow:
+        8px 8px 0px #000033,
+        0 0 30px rgba(255, 0, 255, 0.4),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.lightbox-content::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 2px dashed rgba(0, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+.lightbox-content::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(90deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(0, 255, 255, 0.08) 3px,
+            rgba(0, 255, 255, 0.08) 6px);
+    pointer-events: none;
 }
 
 .lightbox-image {
     max-width: 100%;
     max-height: 80vh;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+    border: 4px solid #00FFFF;
+    border-radius: 0;
+    box-shadow:
+        6px 6px 0px #000033,
+        0 0 25px rgba(0, 255, 255, 0.6);
+    filter: contrast(1.2) saturate(1.2);
 }
 
 .lightbox-info {
     text-align: center;
+    padding: 0.5rem 1rem;
+    background: #000033;
+    border: 2px solid #FFFF00;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-info h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #00FFFF;
+    text-shadow:
+        2px 2px 0px #000033,
+        0 0 10px #00FFFF;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.lightbox-info p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #FFFF00;
+    line-height: 1.8;
 }
 
 /* Animations */
@@ -398,5 +471,75 @@ const closeLightbox = () => {
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .artworks-section {
+        padding: 2.5rem 0.75rem;
+    }
+
+    .header-wrapper {
+        margin-bottom: 2rem;
+        padding: 1rem 0;
+    }
+
+    .header-wrapper h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .header-wrapper p {
+        font-size: 1rem;
+    }
+
+    .gallery-container {
+        padding: 0 0.5rem;
+        column-gap: 1rem;
+    }
+
+    .image-wrapper {
+        border-width: 8px;
+        box-shadow:
+            inset 0 0 25px rgba(0, 0, 0, 0.8),
+            inset 0 0 40px rgba(0, 0, 0, 0.6),
+            0 0 20px rgba(0, 255, 255, 0.3),
+            0 8px 0 #1a1a1a,
+            0 12px 0 #0a0a0a,
+            6px 6px 0px #000033;
+    }
+
+    .image-wrapper::before {
+        width: 60px;
+        height: 10px;
+        top: -12px;
+    }
+
+    .image-wrapper::after {
+        bottom: -16px;
+        height: 16px;
+    }
+
+    .image-overlay {
+        opacity: 1;
+    }
+
+    .overlay-content {
+        transform: translateY(0);
+    }
+
+    .lightbox {
+        padding: 1rem;
+    }
+
+    .close-button {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .lightbox-image {
+        max-height: 70vh;
+    }
 }
 </style>

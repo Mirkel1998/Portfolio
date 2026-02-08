@@ -4,16 +4,18 @@ import { ref } from 'vue';
 const skills = ref([
   'HTML',
   'CSS',
-  'JS',
-  'VUE',
-  'FIGMA',
-  'PHOTOSHOP',
-  'ILLUSTRATOR',
-  'PREMIER PRO',
-  'INDESIGN',
-  '3D',
-  'FOTO',
-  'VIDEO'
+  'JavaScript',
+  'Vue',
+  'Figma',
+  'Photoshop',
+  'Illustrator',
+  'Premiere Pro',
+  'InDesign',
+  '3D-Printing',
+  'PhotoEditing',
+  'VideoEditing',
+  'Camera Operation',
+  'Drone Operation',
 ]);
 </script>
 
@@ -71,9 +73,7 @@ const skills = ref([
             <span class="title-icon">►</span> ABOUT ME
           </h3>
           <p class="box-content">
-            Creative multimedia designer with a passion for combining logic, creativity, and personality.
-            Specializing in web development, photography, and digital illustration.
-            Always eager to learn new technologies and push creative boundaries.
+            yeah, so uh, this is me. I like to make stuff <br> and I like to make it look nice.
           </p>
         </div>
 
@@ -476,6 +476,19 @@ const skills = ref([
 
 /* Responsive */
 @media (max-width: 768px) {
+  .cv-container {
+    padding: 2.5rem 1rem;
+  }
+
+  .cv-header {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .header-decoration {
+    max-width: 120px;
+  }
+
   .cv-title {
     font-size: 0.7rem;
   }
@@ -486,6 +499,45 @@ const skills = ref([
 
   .profile-name {
     font-size: 0.9rem;
+  }
+
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .profile-stats {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .stat-item {
+    min-width: 70px;
+  }
+
+  .hp-bar {
+    width: 70px;
+  }
+
+  .cv-box {
+    padding: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+
+  .skill-tag {
+    flex-wrap: wrap;
+  }
+
+  .skill-name {
+    font-size: 0.55rem;
+    word-break: break-word;
   }
 
   .download-btn {

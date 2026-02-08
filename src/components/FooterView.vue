@@ -9,16 +9,30 @@
             <router-link to="/" class="footer-link">Home</router-link>
             <router-link to="/about" class="footer-link">About</router-link>
             <router-link to="/projects" class="footer-link">Projects</router-link>
+            <router-link to="/paint" class="footer-link">Paint.67</router-link>
             <router-link to="/artworks" class="footer-link">Photos</router-link>
         </div>
 
         <div class="footer-social-container">
-            <p class="social-label">Check out my LinkedIn!</p>
             <a href="https://www.linkedin.com/in/mikkel-bech-mmd/" target="_blank" rel="noopener noreferrer"
-                class="social-icon-link">
-                <img src="../components/images/linkdin.svg" width="50" height="50" alt="LinkedIn Logo">
+                class="social-avatar-link">
+                <span class="social-avatar-frame">
+                    <img src="../components/images/mini_me.png" width="64" height="64" alt="Mikkel avatar">
+                </span>
+                <span class="social-linkedin-icon" aria-hidden="true">
+                    <img src="../components/images/linkdin.svg" width="28" height="28" alt="">
+                </span>
+                <span class="social-bubble">Check out my LinkedIn!</span>
             </a>
         </div>
+
+        <a class="footer-corner-link" href="https://avj-exam-project-2025.web.app/" target="_blank"
+            rel="noopener noreferrer">
+            <span class="footer-corner-avatar">
+                <img src="../components/images/mini_me.png" width="64" height="64" alt="Mini Me">
+            </span>
+            <span class="footer-corner-text">psssst i also made som shitty games</span>
+        </a>
     </footer>
 </template>
 
@@ -160,27 +174,162 @@
     }
 }
 
-.social-label {
-    font-family: 'VT323', monospace;
-    color: #00FFFF;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.social-icon-link {
-    display: inline-block;
-    padding-left: 1.875rem;
+.social-avatar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
     transition: transform 0.1s steps(2);
 }
 
-.social-icon-link:hover {
-    transform: scale(1.1);
+.social-avatar-link:hover {
+    transform: translateY(-2px);
 }
 
-.social-icon-link img {
-    filter: drop-shadow(0 0 10px #00FFFF);
+.social-avatar-frame {
+    display: inline-flex;
+    padding: 6px;
+    border: 2px solid #00FFFF;
+    background: #000033;
+    box-shadow:
+        4px 4px 0px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(0, 255, 255, 0.6);
+}
+
+.social-avatar-frame img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    object-position: center top;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    filter: drop-shadow(0 0 6px #00FFFF);
+}
+
+.social-linkedin-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: 2px solid #FF00FF;
+    background: #000033;
+    box-shadow:
+        3px 3px 0px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(255, 0, 255, 0.6);
+}
+
+.social-linkedin-icon img {
+    width: 28px;
+    height: 28px;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(255, 0, 255, 0.6));
+}
+
+.social-bubble {
+    font-family: 'Press Start 2P', cursive;
+    color: #FFFF00;
+    font-size: 0.6rem;
+    line-height: 1.8;
+    background: #000033;
+    border: 2px solid #FF00FF;
+    padding: 0.6rem 0.8rem;
+    position: relative;
+    box-shadow:
+        4px 4px 0px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(255, 0, 255, 0.5);
+}
+
+.social-bubble::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 8px solid #FF00FF;
+}
+
+.social-bubble::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 6px solid #000033;
+}
+
+.footer-corner-link {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 0.25rem;
+    transform: rotate(2deg);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer-corner-avatar {
+    display: inline-flex;
+    padding: 4px;
+    border: 2px solid #00FFFF;
+    background: #000033;
+    box-shadow:
+        4px 4px 0px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.footer-corner-avatar img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    object-position: center top;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(0 0 6px #00FFFF);
+}
+
+.footer-corner-text {
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.45rem;
+    color: #00FFFF;
+    background: #000033;
+    border: 2px solid #00FFFF;
+    padding: 0.4rem 0.6rem;
+    box-shadow:
+        4px 4px 0px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(0, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+    .footer-corner-link {
+        display: none;
+    }
+
+    .footer-corner-link {
+        left: 1rem;
+        transform: rotate(2deg);
+    }
+
+    .footer-corner-avatar img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer-corner-text {
+        font-size: 0.4rem;
+        padding: 0.35rem 0.5rem;
+    }
 }
 </style>

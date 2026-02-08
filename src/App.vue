@@ -1,7 +1,9 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import FooterView from './components/FooterView.vue';
 
+const isMenuOpen = ref(false)
 </script>
 
 
@@ -12,17 +14,25 @@ import FooterView from './components/FooterView.vue';
 <template>
   <header>
     <router-link to="/">
-      <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="50" height="50" />
+      <img alt="Mikkel avatar" class="logo" src="@/components/images/mini_me.png" width="50" height="50" />
     </router-link>
 
-    <div class="wrapper">
+    <button type="button" class="menu-toggle" :aria-expanded="isMenuOpen" aria-controls="primary-nav"
+      @click="isMenuOpen = !isMenuOpen">
+      <span class="menu-icon"></span>
+      <span class="menu-icon"></span>
+      <span class="menu-icon"></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
 
-      <nav class="text-pinkyWhite">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/artworks">Artworks</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
+    <div class="wrapper">
+      <nav id="primary-nav" class="text-pinkyWhite" :class="{ 'nav-open': isMenuOpen }">
+        <RouterLink to="/" @click="isMenuOpen = false">Home</RouterLink>
+        <RouterLink to="/about" @click="isMenuOpen = false">About</RouterLink>
+        <RouterLink to="/projects" @click="isMenuOpen = false">Projects</RouterLink>
+        <RouterLink to="/paint" @click="isMenuOpen = false">Paint.67</RouterLink>
+        <RouterLink to="/artworks" @click="isMenuOpen = false">Artworks</RouterLink>
+        <RouterLink to="/contact" @click="isMenuOpen = false">Contact</RouterLink>
       </nav>
     </div>
   </header>
@@ -73,6 +83,37 @@ header::after {
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
   filter: drop-shadow(0 0 10px #00FFFF);
+}
+
+.menu-toggle {
+  display: none;
+  margin: 0 auto 1.5rem;
+  background: #000033;
+  border: 3px solid #00FFFF;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  box-shadow:
+    4px 4px 0px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.menu-icon {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #00FFFF;
+  margin: 4px 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 nav {
@@ -149,7 +190,7 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: 0.25rem 2rem 0 0;
   }
 
   header .wrapper {
@@ -164,6 +205,30 @@ nav a:first-of-type {
     font-size: 0.875rem;
     padding: 1rem 0;
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0;
+  }
+
+  nav.nav-open {
+    display: flex;
+  }
+
+  nav a {
+    border-left: 0;
   }
 }
 </style>

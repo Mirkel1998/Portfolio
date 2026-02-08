@@ -6,6 +6,8 @@ import 'vueperslides/dist/vueperslides.css'
 
 import { ref } from 'vue'
 
+import mini_me_neon from '../components/images/miniMe.jpg'
+
 // Import images for the first carousel
 import web_plastic_1 from '../components/images/webPlastic1.jpg'
 import web_plastic_2 from '../components/images/webPlastic2.jpg'
@@ -43,7 +45,7 @@ const slides2 = ref([
     <div class="project-container">
       <div class="gameboy-frame">
         <div class="gameboy-top">
-          <div class="brand-text">By Bech</div>
+          <div class="brand-text">Not A GameBoy</div>
           <div class="power-led"></div>
         </div>
         <div class="screen-bezel">
@@ -87,7 +89,7 @@ const slides2 = ref([
     <div class="project-container">
       <div class="gameboy-frame">
         <div class="gameboy-top">
-          <div class="brand-text">By Bech</div>
+          <div class="brand-text">Not A GameBoy</div>
           <div class="power-led"></div>
         </div>
         <div class="screen-bezel">
@@ -124,6 +126,16 @@ const slides2 = ref([
         </div>
       </div>
     </div>
+
+    <div class="neon-corner">
+      <a class="neon-corner-link" href="https://avj-exam-project-2025.web.app/" target="_blank"
+        rel="noopener noreferrer">
+        <span class="neon-avatar-frame">
+          <img :src="mini_me_neon" alt="Mini Me" class="neon-avatar" />
+        </span>
+        <span class="neon-text">psssst i also made som shitty games</span>
+      </a>
+    </div>
   </section>
 </template>
 
@@ -132,11 +144,12 @@ const slides2 = ref([
 <style scoped>
 .projects-section {
   min-height: 100vh;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 20rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
   align-items: center;
+  position: relative;
 }
 
 /* Game Boy Frame */
@@ -373,8 +386,97 @@ const slides2 = ref([
   filter: contrast(1.1) saturate(0.9);
 }
 
+/* Neon Corner Link */
+.neon-corner {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 5;
+}
+
+.neon-corner-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.neon-avatar-frame {
+  padding: 6px;
+  border: 2px solid #00FFFF;
+  border-radius: 12px;
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 18px rgba(255, 0, 255, 0.4);
+  background: rgba(0, 0, 51, 0.6);
+}
+
+.neon-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter:
+    brightness(1.15) contrast(1.2) drop-shadow(0 0 8px #00FFFF) drop-shadow(0 0 14px #FF00FF);
+}
+
+.neon-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.55rem;
+  color: #00FFFF;
+  background: #000033;
+  border: 2px solid #00FFFF;
+  padding: 0.6rem 0.8rem;
+  text-align: center;
+  box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.5),
+    0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.neon-corner-link:hover .neon-avatar-frame,
+.neon-corner-link:hover .neon-text {
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.8),
+    0 0 30px rgba(255, 0, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .neon-corner {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .neon-avatar {
+    width: 96px;
+    height: 96px;
+  }
+
+  .neon-text {
+    font-size: 0.5rem;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1rem 12rem;
+    gap: 4rem;
+  }
+
+  .project-container {
+    gap: 1.5rem;
+  }
+
+  .gameboy-frame {
+    padding: 1.5rem 1rem;
+  }
+
+  .screen-bezel {
+    padding: 1rem;
+  }
+
   .gameboy-controls {
     padding: 0 1rem;
   }
@@ -393,6 +495,52 @@ const slides2 = ref([
 
   .brand-text {
     font-size: 0.6rem;
+  }
+
+  .project-info {
+    padding: 1.25rem;
+  }
+
+  .info-column {
+    font-size: 1rem;
+  }
+
+  .info-column p {
+    word-break: break-word;
+  }
+
+  .info-label {
+    font-size: 0.55rem;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .neon-corner {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .neon-corner-link {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .gameboy-controls {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .dpad {
+    width: 54px;
+    height: 54px;
+  }
+
+  .button-a,
+  .button-b {
+    width: 36px;
+    height: 36px;
+    font-size: 0.55rem;
   }
 }
 </style>

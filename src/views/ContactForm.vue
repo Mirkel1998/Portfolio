@@ -377,4 +377,31 @@ export default {
         padding: 0.75rem 1.5rem;
     }
 }
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+
+    .form-container {
+        padding: 1.25rem;
+    }
+
+    .form-description {
+        font-size: 1rem;
+    }
+
+    .form-input {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .button-container {
+        justify-content: stretch;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
 </style>

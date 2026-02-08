@@ -76,9 +76,8 @@ onMounted(() => {
             composition, and perspective come together to create something unique.
           </p>
           <p class="feature-subtext">
-            This photograph was the winner for a contest we had 1st semester at EASV. Each student had free reign
-            over the theme and feeling for the photograph. The only restriction was that we could only use simple
-            editing tools like cropping and brightness.
+            Photos reminds us that moments are fleeting and precious, and that there's beauty to be found in the world
+            around us if we just take the time to look for it.
           </p>
         </div>
       </div>
@@ -97,9 +96,8 @@ onMounted(() => {
             good old fun!
           </p>
           <p class="feature-subtext">
-            This illustration was made for an assignment where we had to create ourselves as some type of character.
-            I chose to make myself in South Park style. The assignment was meant for us to learn simple tools in
-            Illustrator.
+            Currently working on a 2D platformer feauturing this guy. The game will be made in Unity. Stay tuned for
+            more info on that!
           </p>
         </div>
         <div class="feature-image-wrapper order-2">
@@ -968,6 +966,40 @@ onMounted(() => {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 520px;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+
+  .hero-text-wrapper {
+    gap: 1.5rem;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .about-section {
+    padding: 4rem 1rem;
+  }
+
+  .button-wrapper {
+    justify-content: center;
+  }
+
+  .feature-section {
+    padding: 3rem 1rem;
+  }
+
   .feature-image-wrapper {
     height: 300px;
     border-right: none;
@@ -1037,12 +1069,32 @@ onMounted(() => {
     font-size: 1rem;
   }
 
+  .feature-text {
+    font-size: 1rem;
+  }
+
+  .feature-subtext {
+    font-size: 0.95rem;
+  }
+
   .about-title {
     font-size: 1.2rem;
   }
 
   .cta-title {
     font-size: 1.2rem;
+  }
+
+  .cta-section {
+    padding: 5rem 1rem;
+  }
+
+  .cta-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
   }
 
   .cta-button-large {
