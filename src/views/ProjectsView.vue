@@ -40,6 +40,18 @@ const slides2 = ref([
 </script>
 
 <template>
+  <!-- Hero Header -->
+  <section class="header-section">
+    <div class="header-wrapper">
+      <h1 class="header-title">
+        // PROJECTS //
+      </h1>
+      <p class="header-description">
+        A collection of my work and experiments.
+      </p>
+    </div>
+  </section>
+
   <section class="projects-section">
     <!-- First Carousel Section -->
     <div class="project-container">
@@ -142,6 +154,60 @@ const slides2 = ref([
 
 
 <style scoped>
+/* Header Section */
+.header-section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.header-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.header-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #00FFFF;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  text-shadow:
+    3px 3px 0px #000033,
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF;
+  animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  24%,
+  55% {
+    opacity: 0.8;
+  }
+}
+
+.header-description {
+  font-family: 'VT323', monospace;
+  color: #F8F8FF;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
 .projects-section {
   min-height: 100vh;
   padding: 4rem 2rem 20rem;
@@ -460,6 +526,22 @@ const slides2 = ref([
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header-section {
+    padding: 2rem 0.75rem;
+  }
+
+  .header-wrapper {
+    padding: 1rem 0;
+  }
+
+  .header-title {
+    font-size: 0.8rem;
+  }
+
+  .header-description {
+    font-size: 1rem;
+  }
+
   .projects-section {
     padding: 3rem 1rem 12rem;
     gap: 4rem;

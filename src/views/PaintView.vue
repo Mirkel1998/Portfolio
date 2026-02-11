@@ -148,8 +148,9 @@ onBeforeUnmount(() => {
 <template>
     <section class="paint-hero">
         <div class="paint-hero__content">
-            <p class="paint-hero__eyebrow">It is what it is</p>
-            <h1 class="paint-hero__title">Paint.67</h1>
+            <h1 class="paint-hero__title">
+                // PAINT.67 //
+            </h1>
             <p class="paint-hero__subtitle">It's paint, just "slightly" worse.</p>
         </div>
     </section>
@@ -226,27 +227,51 @@ onBeforeUnmount(() => {
     text-align: center;
 }
 
-.paint-hero__eyebrow {
-    font-family: 'VT323', monospace;
-    color: #FF00FF;
-    letter-spacing: 0.35rem;
-    text-transform: uppercase;
-    font-size: 1.1rem;
+.paint-hero__content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .paint-hero__title {
     font-family: 'Press Start 2P', cursive;
-    color: #F8F8FF;
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    margin-top: 0.8rem;
-    text-shadow: 0 0 14px rgba(0, 255, 255, 0.8);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #00FFFF;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    text-shadow:
+        3px 3px 0px #000033,
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: 0.8;
+    }
 }
 
 .paint-hero__subtitle {
     font-family: 'VT323', monospace;
-    color: #BBD7FF;
-    margin-top: 1rem;
+    color: #F8F8FF;
     font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .paint-shell {

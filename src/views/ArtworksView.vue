@@ -56,11 +56,11 @@ const closeLightbox = () => {
     <section class="artworks-section">
         <!-- Hero Header -->
         <div class="header-wrapper">
-            <h1 class="text-purpleRain text-6xl md:text-7xl font-bold titleFont animate-fade-in-down">
-                Photos
+            <h1 class="header-title">
+                // PHOTOS //
             </h1>
-            <p class="text-pinkyWhite text-lg mt-4 animate-fade-in">
-                Polaroids and pixels - who would have thunk it? <br>
+            <p class="header-description">
+                Polaroids and pixels - who would have thunk it?
             </p>
         </div>
 
@@ -124,6 +124,48 @@ const closeLightbox = () => {
     text-align: center;
     margin-bottom: 4rem;
     padding: 2rem 0;
+}
+
+.header-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #00FFFF;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    text-shadow:
+        3px 3px 0px #000033,
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+.header-description {
+    font-family: 'VT323', monospace;
+    color: #F8F8FF;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+@keyframes neonFlicker {
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: 0.8;
+    }
 }
 
 /* Gallery Grid - Masonry Style */
@@ -608,12 +650,11 @@ const closeLightbox = () => {
         padding: 1rem 0;
     }
 
-    .header-wrapper h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+    .header-title {
+        font-size: 0.8rem;
     }
 
-    .header-wrapper p {
+    .header-description {
         font-size: 1rem;
     }
 
