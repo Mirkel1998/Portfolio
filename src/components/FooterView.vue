@@ -2,7 +2,7 @@
     <footer class="footer-main">
         <div class="footerContent1 w-1/3 hidden sm:block">
             <h1 class="footer-name">Mikkel Bech</h1>
-            <p class="footer-copyright">All rights reserved 2025</p>
+            <p class="footer-copyright">All rights reserved 2026</p>
         </div>
 
         <div class="footer-nav-container">
