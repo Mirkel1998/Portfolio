@@ -24,7 +24,7 @@ onMounted(() => {
             <div class="neon-outline outline-2"></div>
             <div class="neon-outline outline-3"></div>
           </div>
-          <h1 class="hero-title-main animate-slide-up" style="animation-delay: 0.3s">Hiya!</h1>
+          <h1 class="hero-title-main animate-slide-up" style="animation-delay: 0.3s">Helcome</h1>
         </div>
       </div>
       <div class="scroll-indicator">
