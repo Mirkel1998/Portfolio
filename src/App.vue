@@ -31,7 +31,7 @@ const isMenuOpen = ref(false)
         <RouterLink to="/about" @click="isMenuOpen = false">About</RouterLink>
         <RouterLink to="/projects" @click="isMenuOpen = false">Projects</RouterLink>
         <RouterLink to="/paint" @click="isMenuOpen = false">Paint.67</RouterLink>
-        <RouterLink to="/artworks" @click="isMenuOpen = false">Artworks</RouterLink>
+        <RouterLink to="/artworks" @click="isMenuOpen = false">Gallery</RouterLink>
         <RouterLink to="/contact" @click="isMenuOpen = false">Contact</RouterLink>
       </nav>
     </div>

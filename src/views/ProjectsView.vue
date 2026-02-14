@@ -552,20 +552,40 @@ const slides2 = ref([
   }
 
   .gameboy-frame {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.75rem;
+    border-radius: 8px 8px 20px 20px;
+  }
+
+  .gameboy-top {
+    margin-bottom: 1rem;
+  }
+
+  .brand-text {
+    font-size: 0.55rem;
+  }
+
+  .power-led {
+    width: 10px;
+    height: 10px;
   }
 
   .screen-bezel {
-    padding: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .gameboy-controls {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
 
   .dpad {
     width: 60px;
     height: 60px;
+  }
+
+  .dpad-center {
+    width: 16px;
+    height: 16px;
   }
 
   .button-a,
@@ -580,7 +600,11 @@ const slides2 = ref([
   }
 
   .project-info {
-    padding: 1.25rem;
+    padding: 1rem;
+  }
+
+  .info-grid {
+    gap: 1rem;
   }
 
   .info-column {
@@ -605,12 +629,61 @@ const slides2 = ref([
   .neon-corner-link {
     align-items: center;
   }
+
+  .retro-slider :deep(.vueperslides__arrow) {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+  }
+
+  .retro-slider :deep(.vueperslides__arrow svg) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 640px) {
+  .projects-section {
+    padding: 2rem 0.5rem 10rem;
+  }
+
+  .project-container {
+    gap: 1rem;
+  }
+
+  .gameboy-frame {
+    padding: 0.75rem 0.5rem;
+    border-radius: 6px 6px 16px 16px;
+  }
+
+  .gameboy-top {
+    margin-bottom: 0.75rem;
+    padding: 0 0.25rem;
+  }
+
+  .brand-text {
+    font-size: 0.45rem;
+  }
+
+  .power-led {
+    width: 8px;
+    height: 8px;
+  }
+
+  .screen-bezel {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+
+  .screen-glass {
+    border-width: 2px;
+    border-radius: 3px;
+  }
+
   .gameboy-controls {
     padding: 0;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .dpad {
@@ -623,6 +696,44 @@ const slides2 = ref([
     width: 36px;
     height: 36px;
     font-size: 0.55rem;
+    border-width: 2px;
+  }
+
+  .project-info {
+    padding: 0.75rem;
+  }
+
+  .info-grid {
+    gap: 0.75rem;
+  }
+
+  .info-column {
+    font-size: 0.95rem;
+    gap: 0.6rem;
+  }
+
+  .info-label {
+    font-size: 0.5rem;
+  }
+
+  .retro-slider :deep(.vueperslides__arrow) {
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
+  }
+
+  .retro-slider :deep(.vueperslides__arrow svg) {
+    width: 16px;
+    height: 16px;
+  }
+
+  .retro-slider :deep(.vueperslides__bullets) {
+    gap: 0.3rem;
+  }
+
+  .retro-slider :deep(.vueperslides__bullet) {
+    width: 8px;
+    height: 8px;
   }
 }
 </style>

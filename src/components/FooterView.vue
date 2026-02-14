@@ -10,7 +10,7 @@
             <router-link to="/about" class="footer-link">About</router-link>
             <router-link to="/projects" class="footer-link">Projects</router-link>
             <router-link to="/paint" class="footer-link">Paint.67</router-link>
-            <router-link to="/artworks" class="footer-link">Photos</router-link>
+            <router-link to="/artworks" class="footer-link">Gallery</router-link>
         </div>
 
         <div class="footer-social-container">

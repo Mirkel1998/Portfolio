@@ -291,7 +291,11 @@ const skills = ref([
 .hp-bar {
   width: 80px;
   height: 12px;
-  background: #000033;
+  background: repeating-linear-gradient(90deg,
+      #FF0000 0px,
+      #FF0000 4px,
+      #DD0000 4px,
+      #DD0000 8px);
   border: 2px solid #00FF00;
   position: relative;
   overflow: hidden;
@@ -299,7 +303,7 @@ const skills = ref([
 
 .hp-fill {
   height: 100%;
-  width: 100%;
+  width: 30%;
   background: repeating-linear-gradient(90deg,
       #00FF00 0px,
       #00FF00 4px,

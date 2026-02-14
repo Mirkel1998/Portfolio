@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import FooterView from '../components/FooterView.vue';
 
 // Import images
@@ -39,9 +39,18 @@ const images = ref([
 const featuredImages = ref([
     { src: drone1, title: 'Twilight', category: 'Drone' },
     { src: drone2, title: 'Another Perspective', category: 'Drone' },
-    { src: drone3, title: 'SunSet', category: 'Drone' },
-    { src: drone4, title: 'DayTime', category: 'Drone' }
+    { src: drone3, title: 'Sunset', category: 'Drone' },
+    { src: drone4, title: 'Daytime', category: 'Drone' }
 ]);
+
+// Combine all images for navigation
+const allImages = computed(() => [...images.value, ...featuredImages.value]);
+
+// Get current image index
+const currentIndex = computed(() => {
+    if (!selectedImage.value) return -1;
+    return allImages.value.findIndex(img => img.src === selectedImage.value.src);
+});
 
 const openLightbox = (image) => {
     selectedImage.value = image;
@@ -50,6 +59,43 @@ const openLightbox = (image) => {
 const closeLightbox = () => {
     selectedImage.value = null;
 };
+
+const nextImage = () => {
+    if (currentIndex.value < allImages.value.length - 1) {
+        selectedImage.value = allImages.value[currentIndex.value + 1];
+    } else {
+        selectedImage.value = allImages.value[0]; // Loop back to first
+    }
+};
+
+const previousImage = () => {
+    if (currentIndex.value > 0) {
+        selectedImage.value = allImages.value[currentIndex.value - 1];
+    } else {
+        selectedImage.value = allImages.value[allImages.value.length - 1]; // Loop to last
+    }
+};
+
+// Keyboard navigation
+const handleKeydown = (e) => {
+    if (!selectedImage.value) return;
+
+    if (e.key === 'ArrowRight') {
+        nextImage();
+    } else if (e.key === 'ArrowLeft') {
+        previousImage();
+    } else if (e.key === 'Escape') {
+        closeLightbox();
+    }
+};
+
+onMounted(() => {
+    window.addEventListener('keydown', handleKeydown);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('keydown', handleKeydown);
+});
 </script>
 
 <template>
@@ -103,10 +149,26 @@ const closeLightbox = () => {
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+
+                <!-- Previous Button -->
+                <button class="nav-button prev-button" @click.stop="previousImage">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <!-- Next Button -->
+                <button class="nav-button next-button" @click.stop="nextImage">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
                 <div class="lightbox-content" @click.stop>
                     <img :src="selectedImage.src" :alt="selectedImage.title" class="lightbox-image">
                     <div class="lightbox-info">
                         <h2 class="text-pinkyWhite text-2xl font-bold">{{ selectedImage.title }}</h2>
+                        <p class="image-counter">{{ currentIndex + 1 }} / {{ allImages.length }}</p>
                     </div>
                 </div>
             </div>
@@ -333,7 +395,6 @@ const closeLightbox = () => {
     display: block;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    filter: contrast(1.15) saturate(1.2);
     transition: transform 0.3s ease;
 }
 
@@ -354,7 +415,7 @@ const closeLightbox = () => {
     display: flex;
     align-items: flex-end;
     padding: 1.25rem;
-    opacity: 0.9;
+    opacity: 0;
     transition: opacity 0.2s ease;
 }
 
@@ -520,6 +581,54 @@ const closeLightbox = () => {
     color: #000033;
 }
 
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000033;
+    border: 3px solid #FF00FF;
+    border-radius: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s steps(2);
+    z-index: 1001;
+    box-shadow:
+        4px 4px 0px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(255, 0, 255, 0.6);
+}
+
+.prev-button {
+    left: 2rem;
+}
+
+.next-button {
+    right: 2rem;
+}
+
+.nav-button:hover {
+    background: #FF00FF;
+    color: #000033;
+    transform: translateY(-50%) translate(-2px, -2px);
+    box-shadow:
+        6px 6px 0px rgba(0, 0, 0, 0.8),
+        0 0 18px rgba(255, 0, 255, 0.9);
+}
+
+.nav-button svg {
+    width: 28px;
+    height: 28px;
+    color: #FF00FF;
+}
+
+.nav-button:hover svg {
+    color: #000033;
+}
+
 .lightbox-content {
     max-width: min(900px, 92vw);
     max-height: 90vh;
@@ -543,6 +652,7 @@ const closeLightbox = () => {
     inset: 10px;
     border: 2px dashed rgba(0, 255, 255, 0.5);
     pointer-events: none;
+    z-index: -1;
 }
 
 .lightbox-content::after {
@@ -556,6 +666,7 @@ const closeLightbox = () => {
             rgba(0, 255, 255, 0.08) 3px,
             rgba(0, 255, 255, 0.08) 6px);
     pointer-events: none;
+    z-index: -1;
 }
 
 .lightbox-image {
@@ -567,7 +678,6 @@ const closeLightbox = () => {
     box-shadow:
         6px 6px 0px #000033,
         0 0 25px rgba(0, 255, 255, 0.6);
-    filter: contrast(1.2) saturate(1.2);
 }
 
 .lightbox-info {
@@ -713,6 +823,24 @@ const closeLightbox = () => {
         right: 1rem;
         width: 40px;
         height: 40px;
+    }
+
+    .nav-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .prev-button {
+        left: 0.5rem;
+    }
+
+    .next-button {
+        right: 0.5rem;
+    }
+
+    .nav-button svg {
+        width: 24px;
+        height: 24px;
     }
 
     .lightbox-image {
